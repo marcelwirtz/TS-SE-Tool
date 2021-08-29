@@ -183,7 +183,7 @@ namespace TS_SE_Tool
 
                 textBoxAccountMoney.SelectionStart = testV + cSpace2 - cSpace1;
 
-                PlayerDataData.AccountMoney = (uint)Math.Round(valueBefore / CurrencyDictConversion[Globals.CurrencyName]);
+                PlayerDataData.AccountMoney = (int)Math.Round(valueBefore / CurrencyDictConversion[Globals.CurrencyName]);
             }
         }
 

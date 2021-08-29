@@ -20,6 +20,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Globalization;
 
 namespace TS_SE_Tool
 {
@@ -36,7 +37,7 @@ namespace TS_SE_Tool
         private ushort InfoUnlockedRecruitments { get; set; } = 0;
         private ushort InfoUnlockedDealers { get; set; } = 0;
         private ushort InfoVisitedCities { get; set; } = 0;
-        private uint InfoMoneyAccount { get; set; } = 0;
+        private int InfoMoneyAccount { get; set; } = 0;
         private decimal InfoExploredRatio { get; set; } = 0.0M;
 
         internal List<Dependency> Dependencies { get; set; }
@@ -185,7 +186,7 @@ namespace TS_SE_Tool
                 if (_FileLines[line].StartsWith(" info_money_account:"))
                 {
                     chunkOfline = _FileLines[line].Split(new char[] { ' ' });
-                    InfoMoneyAccount = uint.Parse(chunkOfline[2]);
+                    InfoMoneyAccount = int.Parse(chunkOfline[2], NumberStyles.AllowLeadingSign);
                     continue;
                 }
 
